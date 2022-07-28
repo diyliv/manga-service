@@ -27,7 +27,7 @@ func (s *mangaService) Search(ctx context.Context, req *mangapb.SearchReq) (*man
 
 	parse := parser.ParseMangaPoisk(name)
 	if len(parse) == 0 {
-		return nil, status.Error(codes.NotFound, "Nothing was found.")
+		return nil, nil
 	}
 
 	resp := make([]*mangapb.Manga, 0)
