@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package manga;
+option go_package="mangapb";
+
+service MangaService {
+    rpc Search(SearchReq) returns (SearchResp){};
+}
+
+message Manga {
+    string name = 1;
+    string link = 2;
+    string genre = 3;
+    string chapters = 4;
+    string description = 5;
+    string year = 6;
+    string rate = 7;
+}
+
+message SearchReq {
+    string mangaName = 1;
+}
+
+message SearchResp {
+    repeated Manga searchResp = 1;
+}
